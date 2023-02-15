@@ -15,10 +15,29 @@
       type="text"
       placeholder="Description"
     />
-    <button class="btn" @click="createPost">Create</button>
+    <button class="btn">Create</button>
   </form>
 </template>
 
 <script></script>
 
-<style scoped></style>
+<style scoped>
+form {
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  align-self: flex-end;
+  margin-bottom: 1px;
+  padding: 10px 15px;
+  background: none;
+  color: teal;
+  border: 1px solid teal;
+}
+.input {
+  width: 100%;
+  border: 1px solid teal;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+</style>

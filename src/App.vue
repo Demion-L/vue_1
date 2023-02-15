@@ -1,28 +1,20 @@
 <template>
   <div class="app">
-    <form @submit.prevent>
-      <h4>Create post</h4>
-      <input
-        v-bind:value="title"
-        @input="inputTitle"
-        class="input"
-        type="text"
-        placeholder="Title"
-      />
-      <input
-        v-bind:value="body"
-        @input="body = $event.target.value"
-        class="input"
-        type="text"
-        placeholder="Description"
-      />
-      <button class="btn" @click="createPost">Create</button>
-    </form>
+    <PostForm />
+    <PostList />
   </div>
 </template>
 
 <script>
+//import our components
+import PostForm from "@/components/PostForm";
+import PostList from "@/components/PostList";
+
 export default {
+  components: {
+    PostForm,
+    PostList,
+  },
   data() {
     return {
       posts: [
@@ -60,24 +52,5 @@ export default {
 }
 .app {
   padding: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-.btn {
-  align-self: flex-end;
-  margin-bottom: 1px;
-  padding: 10px 15px;
-  background: none;
-  color: teal;
-  border: 1px solid teal;
-}
-.input {
-  width: 100%;
-  border: 1px solid teal;
-  padding: 10px 15px;
-  margin-bottom: 15px;
 }
 </style>
