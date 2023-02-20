@@ -1,25 +1,39 @@
 <template>
   <form @submit.prevent>
     <h4>Create post</h4>
+    <input v-model="post.title" class="input" type="text" placeholder="Title" />
     <input
-      v-bind:value="title"
-      @input="inputTitle"
-      class="input"
-      type="text"
-      placeholder="Title"
-    />
-    <input
-      v-bind:value="body"
-      @input="body = $event.target.value"
+      v-model="post.body"
       class="input"
       type="text"
       placeholder="Description"
     />
-    <button class="btn">Create</button>
+    <button class="btn" @click="createPost">Create</button>
   </form>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      post: {
+        title: "",
+        body: "",
+      },
+    };
+  },
+  methods: {
+    createPost() {
+      this.post.id = Date.now();
+      this.$emit("create", this.post);
+      this.post = {
+        title: "",
+        body: "",
+      };
+    },
+  },
+};
+</script>
 
 <style scoped>
 form {
