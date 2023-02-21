@@ -8,7 +8,7 @@
       type="text"
       placeholder="Description"
     />
-    <button class="btn" @click="createPost">Create</button>
+    <MyButton style="align-self: flex-end" @click="createPost">Create</MyButton>
   </form>
 </template>
 
@@ -39,19 +39,5 @@ export default {
 form {
   display: flex;
   flex-direction: column;
-}
-.btn {
-  align-self: flex-end;
-  margin-bottom: 1px;
-  padding: 10px 15px;
-  background: none;
-  color: teal;
-  border: 1px solid teal;
-}
-.input {
-  width: 100%;
-  border: 1px solid teal;
-  padding: 10px 15px;
-  margin-bottom: 15px;
 }
 </style>
